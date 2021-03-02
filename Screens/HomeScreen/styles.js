@@ -5,20 +5,23 @@ const styles = StyleSheet.create({
   root: {
     flex: 1,
     // borderWidth: 2,
-    // margin: 20,
     alignItems: 'center',
-    // justifyContent: 'center',
-  },
-  image: {
-    height: 200,
-    width: 200,
-    resizeMode: 'cover',
-    // borderWidth: 2,
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    padding: 10,
     // width: '100%',
-    marginVertical: 10,
   },
+
   inputConatiner: {
-    width: '100%',
+    width: 350,
+  },
+  // buttons: {
+  //   // borderWidth: 2,
+  //   width: '100%',
+  // },
+  button: {
+    width: 350,
+    marginVertical: 5,
   },
 });
 

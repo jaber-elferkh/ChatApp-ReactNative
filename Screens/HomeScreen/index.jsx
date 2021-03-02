@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'react-native';
+import { KeyboardAvoidingView } from 'react-native';
 import { View } from 'react-native';
 import { Button, Image, Input } from 'react-native-elements';
 import { TextInput } from 'react-native-gesture-handler';
@@ -7,17 +8,21 @@ import styles from './styles';
 
 const HomeScreen = () => {
   const [email, setEmail] = useState('');
-  const [password, setPssword] = useState('');
+  const [password, setPassword] = useState('');
+  // const image = '../../assets/images/Logo.png';
+
+  const signIn = () => {};
 
   return (
-    <View style={styles.root}>
+    <KeyboardAvoidingView behavior="padding" enabled style={styles.root}>
       <StatusBar style="light" />
       <Image
         source={{
           uri:
-            'https://mir-s3-cdn-cf.behance.net/projects/404/d6991d86437115.Y3JvcCw4MDgsNjMyLDAsMA.jpg',
+            'https://cdn.logojoy.com/wp-content/uploads/2018/08/23144949/2-1.png',
         }}
-        style={styles.image}
+        style={{ width: 200, height: 200, marginBottom: 30, borderRadius: 100 }}
+        resizeMode={'cover'}
       />
       <View style={styles.inputConatiner}>
         <Input
@@ -35,7 +40,26 @@ const HomeScreen = () => {
           onChangeText={(value) => setPassword(value)}
         />
       </View>
-    </View>
+
+      <View style={styles.buttons}>
+        <Button
+          buttonStyle={{ backgroundColor: '#5A1BEE' }}
+          containerStyle={styles.button}
+          onPress={signIn}
+          title="Login"
+        />
+        <Button
+          buttonStyle={{
+            borderColor: '#5A1BEE',
+            borderWidth: 1,
+          }}
+          font
+          containerStyle={styles.button}
+          type="outline"
+          title="Register"
+        />
+      </View>
+    </KeyboardAvoidingView>
   );
 };
 
